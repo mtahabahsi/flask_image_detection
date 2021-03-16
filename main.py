@@ -8,3 +8,7 @@ image_review_tool = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
+if __name__ =="__main__":
+    image_review_tool.run(debug =True, port=2000)
+
