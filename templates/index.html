@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Headers - 1</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/reset.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/header.css') }}" rel="stylesheet"> 
-  </head>
-  <body>
-    <!-- Header Start -->
-    <header class="site-header">
-      <div class="wrapper site-header__wrapper">
-        <a href="#" class="brand">İmaj İnceleme Aracı</a>
-        <nav class="nav">
-          <button class="nav__toggle" aria-expanded="false" type="button">
-            menu
-          </button>
-          <ul class="nav__wrapper">
-            <li class="nav__item"><a href="#">Home</a></li>
-            <li class="nav__item"><a href="#">About</a></li>
-            <li class="nav__item"><a href="#">Services</a></li>
-            <li class="nav__item"><a href="#">Hire us</a></li>
-            <li class="nav__item"><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- Header End -->
-    
 
-    <script src="js/header-1.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>ForenCrypt - ODA</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="container">
+
+        <div class="masthead clearfix">
+          <div class="container inner">
+            <h3 class="masthead-brand">İmaj Alma Aracı</h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="inner cover">
+          <h1 class="cover-heading">Object Detection Algorithms</h1>
+          <p class="lead">Resmi Seçtiğinizde Resmin İçerisinde Bıçak ve ya Silah nesnelerinden hangisinin olduğunu
+            analiz et butonuna tıklayarak görebilirsiniz. Eğer nesneler yoksa en yakını getirecektir.</p>
+          <div class="c-glitch">
+            <div class="c-glitch__img">
+            </div>
+            <div class="c-glitch__img">
+            </div>
+            <div class="c-glitch__img">
+            </div>
+            <div class="c-glitch__img">
+            </div>
+            <div class="c-glitch__img">
+            </div>
+          </div>
+          <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+          <label for="file" class="btn btn-lg btn-default" style="margin:10px;">Resim Yükle</label>
+          <a class="btn btn-lg btn-default" style="margin:10px;" id="analyze">Analiz Et</a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
 </html>

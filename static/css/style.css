@@ -1,73 +1,169 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-.wrapper {
-  max-width: 1140px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+/*
+ * Globals
+ */
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: #222;
-}
-
+/* Links */
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-.sr-only {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-.button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  color: #fff;
-  background-color: #2fa0f6;
-  min-width: 120px;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.button svg {
-  display: inline-block;
-  vertical-align: middle;
-  width: 24px;
-  height: 24px;
-  fill: #fff;
-}
-
-.button span {
-  display: none;
-}
-
-@media (min-width: 600px) {
-  .button span {
-    display: initial;
+    background: #1b1c1d;
+    box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
   }
-}
-
-.button--icon {
-  min-width: initial;
-  padding: 0.5rem;
-}
+  
+  .c-glitch,
+  .c-glitch__img {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  
+  .c-glitch {
+    height: calc(50vh - 100px);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 30vw;
+  }
+  
+  .c-glitch__img {
+    background-blend-mode: none;
+    background-color: transparent;
+    height: calc(100% + 5px * 2);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    width: calc(100% + 10px * 2);
+  }
+  a,
+  a:focus,
+  a:hover {
+    color: #fff;
+  }
+  
+  /* Custom default button */
+  .btn-default,
+  .btn-default:hover,
+  .btn-default:focus {
+    color: #333;
+    text-shadow: none; /* Prevent inheritence from `body` */
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  
+  /*
+   * Base structure
+   */
+  
+  html,
+  body {
+    height: 100%;
+    background-color: #fff;
+  }
+  body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  }
+  
+  /* Extra markup and styles for table-esque vertical and horizontal centering */
+  .site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    /*height: 100%; */
+    /*min-height: 100%;*/
+  }
+  .site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .cover-container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Padding for spacing */
+  .inner {
+    padding: 30px;
+  }
+  
+  
+  /*
+   * Header
+   */
+  .masthead-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .masthead-nav > li {
+    display: inline-block;
+  }
+  .masthead-nav > li + li {
+    margin-left: 20px;
+  }
+  .masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* IE8 proofing */
+    color: rgba(255,255,255,.75);
+    border-bottom: 2px solid transparent;
+  }
+  .masthead-nav > li > a:hover,
+  .masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255,255,255,.25);
+  }
+  .masthead-nav > .active > a,
+  .masthead-nav > .active > a:hover,
+  .masthead-nav > .active > a:focus {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .masthead-brand {
+      float: left;
+    }
+    .masthead-nav {
+      float: right;
+    }
+  }
+  
+  
+  /*
+   * Cover
+   */
+  
+  .cover {
+    padding: 0 20px;
+  }
+  .cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  
+  /*
+   * Affix and center
+   */
+  
+  @media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+      position: fixed;
+      top: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+      vertical-align: middle;
+    }
+  
+  }
