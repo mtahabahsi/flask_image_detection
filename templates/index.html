@@ -32,7 +32,7 @@
         </div>
 
         <div class="inner cover">
-          <h1 class="cover-heading">Object Detection Algorithms</h1>
+          <h2 class="cover-heading">Object Detection Algorithms</h1>
           <p class="lead">Resmi Seçtiğinizde Resmin İçerisinde Bıçak ve ya Silah nesnelerinden hangisinin olduğunu
             analiz et butonuna tıklayarak görebilirsiniz. Eğer nesneler yoksa en yakını getirecektir.</p>
           <div class="c-glitch">
@@ -47,9 +47,13 @@
             <div class="c-glitch__img">
             </div>
           </div>
-          <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-          <label for="file" class="btn btn-lg btn-default" style="margin:10px;">Resim Yükle</label>
-          <a class="btn btn-lg btn-default" style="margin:10px;" id="analyze">Analiz Et</a>
+          <form id="upload-file" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="input-file" accept=".png, .jpg, .jpeg" style="display: none;">
+            <label for="input-file" class="btn btn-lg btn-default" style="margin:10px;">Resim Yükle</label>
+            <button type="button" class="btn btn-lg btn-default " style="margin:10px;" id="analyze">Analiz Et</button>
+          </form>
+
+          <p  class="lead" id="result"></p>
           </p>
         </div>
 
