@@ -8,11 +8,6 @@ $(document).ready(function () {
         //Resim var mı diye kontrol ediyoruz. 
         if ($('.c-glitch').attr("style")) {
 
-            //Sıkıntı olmasın diye butonlar kapandı
-            //$('.btn,.btn-lg,.btn-default').hide();
-
-
-
 
             //length attribute' ü o nesnenin sayısını değil var olup olmadığını dönderir: varsa return 1 yoksa return 0 
             if ($('.style_file').length == 0) {
@@ -25,8 +20,8 @@ $(document).ready(function () {
             }
             var form_data = new FormData($('#upload-file')[0]);
 
-            $('#input-file').prop( "disabled", true );
-            $('#analyze').prop( "disabled", true );
+            $('#input-file').prop("disabled", true);
+            $('#analyze').prop("disabled", true);
 
 
             $.ajax({
@@ -44,8 +39,8 @@ $(document).ready(function () {
 
 
                     //$('.btn,.btn-lg,.btn-default').show();
-                    $('#input-file').prop( "disabled", false );
-                    $('#analyze').prop( "disabled", false );
+                    $('#input-file').prop("disabled", false);
+                    $('#analyze').prop("disabled", false);
                     $("#style_file").remove();
                 },
             });
@@ -54,4 +49,26 @@ $(document).ready(function () {
             alert("Önce Resim Seçiniz");
         }
     });
+    $("#mount").on('click', function () {
+        var form_data = new FormData($('#choose-image-file')[0]);
+
+        $.ajax({
+            type: 'POST',
+            url: '/mount',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            async: true,
+            success: function (data) {
+                console.log("mount Fonksiyon başarıyla çalıştı:" + data);
+
+
+            },
+        });
+
+    });
+
+
+
 });

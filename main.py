@@ -82,6 +82,26 @@ def upload():
         return result_t
     return None
 
+@image_review_tool.route('/mount', methods=['GET', 'POST'])
+def mount_image():
+    if request.method == 'POST':
+        # Get the file from post request
+        f = request.files['file']
+
+        # Save the file to ./uploads
+        basepath = os.path.dirname(__file__)
+        file_path = os.path.join(
+            basepath, 'image', secure_filename(f.filename))
+        f.save(file_path)
+        print(secure_filename(f.filename))
+        print("mount image/" + secure_filename(f.filename) + " mounts/hadibakimm")
+        
+        os.system("mount image/" + secure_filename(f.filename) + " mounts/hadibakimm")
+
+        return "çalıştı işte"
+    return None
+
+
 
 
 
