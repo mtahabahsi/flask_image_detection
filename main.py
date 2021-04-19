@@ -25,7 +25,6 @@ def prediction1(input_path):
     output_path = "static/result/newimage.jpg"
     cikti = " "
     detector.setModelTypeAsTinyYOLOv3()
-
     detector.setModelPath(model_path)
     detector.loadModel()
 
@@ -37,9 +36,6 @@ def prediction1(input_path):
         cikti += str(detect["percentage_probability"])
         cikti += "\n"
         
-
-
-
     return cikti
 
 
